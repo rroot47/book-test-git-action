@@ -1,8 +1,5 @@
-package art.fr.service;
+package art.fr.book;
 
-
-import art.fr.entities.Book;
-import art.fr.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,14 +8,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class BookService {
-
-    private final BookRepository bookRepository;
+   private final BookRepository bookRepository;
 
     public Book saveBook(Book book){
         return bookRepository.save(book);
     }
     public List<Book> getBooks() {
         return bookRepository.findAll();
+    }
+
+    public Book getBook(Long id) {
+        return bookRepository.findById(id).get();
     }
 
 }

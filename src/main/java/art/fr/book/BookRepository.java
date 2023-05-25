@@ -1,6 +1,5 @@
-package art.fr.repository;
+package art.fr.book;
 
-import art.fr.entities.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
