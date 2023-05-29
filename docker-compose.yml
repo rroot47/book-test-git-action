@@ -1,12 +1,29 @@
 version: '3.8'
+#services:
+#  postgres_db:
+#    container_name: 'postgresdb'
+#    image: postgres:14.2-alpine
+#    restart: always
+#    environment:
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+#      - POSTGRES_DB=book_db
+#    ports:
+#      - '5432:5432'
 services:
-  postgres_db:
-    container_name: 'postgresdb'
-    image: postgres:14.2-alpine
-    restart: always
+  app:
+    container_name: 'book'
+    image: book
+    build: ./
+    ports:
+      - "8080:8096"
+    depends_on:
+      - postgresqldb
+  postgresqldb:
+    image: postgres
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=book_db
-    ports:
-      - '5432:5432'
+      - POSTGRES_DB=db_book
