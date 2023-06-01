@@ -25,7 +25,8 @@ jobs:
           image: bsylla/spring-book
           tags: book
           registry: docker.io
-          dockerfile: Dockerfile
+          run: docker-compose up
+          #dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
