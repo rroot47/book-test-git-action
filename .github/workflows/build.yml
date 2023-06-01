@@ -27,7 +27,7 @@ jobs:
           registry: docker.io
       - uses: isbang/compose-action@v1.4.1
           with:
-            compose-file: "docker-compose.yml"
+            compose-file: docker-compose.yml
             services: docker-compose up
           #dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
