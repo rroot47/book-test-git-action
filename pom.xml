@@ -115,7 +115,7 @@
                 </configuration>-->
             </plugin>
         </plugins>
-        <finalName>book-test</finalName>
+        <finalName>spring-book</finalName>
     </build>
 
 </project>
